@@ -49,6 +49,7 @@ int main()
     cout << combinations(3,2) << endl;
 
     cout << "MOOK CALCULATOR!" << endl;
+    cout << "Calculates chance that at least one of your mooks will do 1 point of damage." << endl;
     cout << endl;
     cout << "Enter Defender Defense roll - should be REA + INT: ";
     cin >> defensePool;
@@ -79,7 +80,9 @@ int main()
             float output = combinations(toHit, defenseRate + netHitsNeeded);
             output = 1 - pow(1-output,i);
             output *= 100;
-            if (output < 0.1)
+            if (output <= 0.00000001)
+                cout << output << "%\t\t";
+            else if (output < 0.1)
                 cout << output << "%\t";
             else
                 cout << output << "%\t\t";
@@ -106,7 +109,37 @@ int main()
             float output = combinations(toHit, defenseRate + netHitsNeeded);
             output = 1 - pow(1-output,i);
             output *= 100;
-            if (output < 0.1)
+            if (output <= 0.00000001)
+                cout << output << "%\t\t";
+            else if (output < 0.1)
+                cout << output << "%\t";
+            else
+                cout << output << "%\t\t";
+        }
+        cout << endl;
+    }
+
+    cout << endl;
+    cout << "MOOKS\t";
+    for (int i=11; i<=15; i++)
+    {
+        cout << i << "DV\t\t";
+    }
+    cout << endl;
+    for (int i=1; i<=10; i++)
+    {
+        cout << i << "\t";
+        for (int j=11; j<=15; j++)
+        {
+            int netHitsNeeded = soakRate - j;
+            if (netHitsNeeded < 1)
+                netHitsNeeded = 1;
+            float output = combinations(toHit, defenseRate + netHitsNeeded);
+            output = 1 - pow(1-output,i);
+            output *= 100;
+            if (output <= 0.00000001)
+                cout << output << "%\t\t";
+            else if (output < 0.1)
                 cout << output << "%\t";
             else
                 cout << output << "%\t\t";
