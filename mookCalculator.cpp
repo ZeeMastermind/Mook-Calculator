@@ -51,9 +51,9 @@ int main()
     cout << "MOOK CALCULATOR!" << endl;
     cout << "Calculates chance that at least one of your mooks will do 1 point of damage." << endl;
     cout << endl;
-    cout << "Enter Defender Defense roll - should be REA + INT: ";
+    cout << "Enter Defender Defense roll: ";
     cin >> defensePool;
-    cout << "Enter Defender Soak roll - should be BOD + Armor: ";
+    cout << "Enter Defender Soak roll: ";
     cin >> soakPool;
     cout << "Finally, enter Mook to-hit roll: ";
     cin >> toHit;
