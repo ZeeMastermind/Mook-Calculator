@@ -46,8 +46,6 @@ int main()
 
     cout.precision(4);
 
-    cout << combinations(3,2) << endl;
-
     cout << "MOOK CALCULATOR!" << endl;
     cout << "Calculates chance that at least one of your mooks will do 1 point of damage." << endl;
     cout << endl;
